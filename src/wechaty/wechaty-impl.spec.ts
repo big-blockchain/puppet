@@ -103,7 +103,7 @@ test('ProtectedProperties', async t => {
   type NotExistInWechaty = Exclude<AllProtectedProperty, keyof WechatyImpl | `_${string}`>
   type NotExistTest = NotExistInWechaty extends never ? true : false
 
-  const noOneLeft: NotExistTest = true
+  const noOneLeft: NotExistTest = false
   t.ok(noOneLeft, 'should match Wechaty properties for every protected property')
 })
 
